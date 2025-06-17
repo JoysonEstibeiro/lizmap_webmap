@@ -3,7 +3,7 @@ services:
     name: lizmap-webmap
     env: docker
     plan: free
-    dockerfilePath: ./Dockerfile  # optional if using Docker Compose
+    dockerComposeFilePath: ./docker-compose.yml
     autoDeploy: true
     buildFilter:
       paths:
