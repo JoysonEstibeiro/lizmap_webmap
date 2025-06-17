@@ -5,11 +5,6 @@ services:
     plan: free
     dockerComposeFilePath: ./docker-compose.yml
     autoDeploy: true
-    buildFilter:
-      paths:
-        - docker-compose.yml
-        - .env
-        - lizmap.dir/**
     envVars:
       - key: POSTGRES_PASSWORD
         value: ${POSTGRES_PASSWORD}
