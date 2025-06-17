@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: lizmap-webmap
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile  # optional if using Docker Compose
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - docker-compose.yml
+        - .env
+        - lizmap.dir/**
+    envVars:
+      - key: POSTGRES_PASSWORD
+        value: ${POSTGRES_PASSWORD}
+      - key: POSTGRES_LIZMAP_DB
+        value: ${POSTGRES_LIZMAP_DB}
+      - key: POSTGRES_LIZMAP_USER
+        value: ${POSTGRES_LIZMAP_USER}
+      - key: POSTGRES_LIZMAP_PASSWORD
+        value: ${POSTGRES_LIZMAP_PASSWORD}
+      - key: LIZMAP_CACHEREDISDB
+        value: ${LIZMAP_CACHEREDISDB}
+      - key: LIZMAP_CACHEREDISHOST
+        value: ${LIZMAP_CACHEREDISHOST}
